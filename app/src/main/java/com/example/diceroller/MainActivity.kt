@@ -10,6 +10,7 @@ import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var dice_count: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,11 +23,11 @@ class MainActivity : AppCompatActivity() {
             rollDice()
         }
 
+        dice_count = findViewById(R.id.dice_count)
 
     }
 
     private fun rollDice() {
-        val dice_count: ImageView = findViewById(R.id.dice_count)
         val rand_num = Random.nextInt(6)+1  //random.nextInt(6 ) gives numbers from 0 to 5, i.e less than 6
         val drawable_resource = when (rand_num)
         {
